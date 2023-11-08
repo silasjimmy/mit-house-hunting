@@ -1,28 +1,29 @@
-# # Part A
+# Part A
 
-# portion_down_payment = 0.25 # Down payment portion
-# current_savings = 0 # Money saved so far
-# r = 0.04 # Annual return rate
-# number_of_months = 0 # Number of months it will take to save to down payment
+portion_down_payment = 0.25  # Down payment portion
+current_savings = 0  # Money saved so far
+r = 0.04  # Annual return rate
+number_of_months = 0  # Number of months it will take to save to down payment
 
-# annual_salary = float(input("Enter your annual salary: "))
-# portion_saved = float(input("Enter the percent of your salary to save, as a decimal: "))
-# total_cost = float(input("Enter the cost of your dream home: "))
+annual_salary = float(input("Enter your annual salary: "))
+portion_saved = float(
+    input("Enter the percent of your salary to save, as a decimal: "))
+total_cost = float(input("Enter the cost of your dream home: "))
 
-# # Calculate the down payment for the house
-# down_payment = total_cost * portion_down_payment
+# Calculate the down payment for the house
+down_payment = total_cost * portion_down_payment
 
 
-# while current_savings < down_payment:
-#     # Calculate the savings for each month
-#     monthly_savings = annual_salary / 12 * portion_saved
-#     # Calculate the monthly returns from investment
-#     monthly_return = current_savings * r / 12
-#     # Increment the savings for each month
-#     current_savings = current_savings + monthly_savings + monthly_return
-#     number_of_months += 1
+while current_savings < down_payment:
+    # Calculate the savings for each month
+    monthly_savings = annual_salary / 12 * portion_saved
+    # Calculate the monthly returns from investment
+    monthly_return = current_savings * r / 12
+    # Increment the savings for each month
+    current_savings = current_savings + monthly_savings + monthly_return
+    number_of_months += 1
 
-# print("Number of months:", number_of_months)
+print("Number of months:", number_of_months)
 
 # Part B
 
@@ -105,50 +106,50 @@
 # print("Difference: ", current_savings - down_payment)
 
 
-# Part C
+# # Part C
 
-num_of_months = 36
-semi_annual_raise = .07
-annual_return_rate = 0.04
-total_cost = 1000000
-down_payment = total_cost * 0.25
+# num_of_months = 36
+# semi_annual_raise = .07
+# annual_return_rate = 0.04
+# total_cost = 1000000
+# down_payment = total_cost * 0.25
 
-starting_salary = int(input("Enter the starting salary: "))
+# starting_salary = int(input("Enter the starting salary: "))
 
-high = 10000
-low = 0
-guess = (high + low) / 2
-num_of_searches = 0
-current_savings = 0
+# high = 10000
+# low = 0
+# guess = (high + low) / 2
+# num_of_searches = 0
+# current_savings = 0
 
-while abs(down_payment - current_savings) >= 100:
-    current_savings = 0
-    portion_saved = guess / 100
-    annual_salary = starting_salary
+# while abs(down_payment - current_savings) >= 100:
+#     current_savings = 0
+#     portion_saved = guess / 100
+#     annual_salary = starting_salary
 
-    # Calculate the current savings after 36 months
-    for n in range(1, num_of_months + 1):
-        # Calculate the monthly savings
-        monthly_savings = annual_salary / 12 * portion_saved
-        # Calculate return from our monthly investment
-        investment_returns = current_savings * (annual_return_rate / 12)
-        # Calculate the current savings
-        current_savings += monthly_savings + investment_returns
+#     # Calculate the current savings after 36 months
+#     for n in range(1, num_of_months + 1):
+#         # Calculate the monthly savings
+#         monthly_savings = annual_salary / 12 * portion_saved
+#         # Calculate return from our monthly investment
+#         investment_returns = current_savings * (annual_return_rate / 12)
+#         # Calculate the current savings
+#         current_savings += monthly_savings + investment_returns
 
-        # Calculate the semi annual raise
-        if n % 6 == 0:
-            annual_salary += annual_salary * semi_annual_raise
+#         # Calculate the semi annual raise
+#         if n % 6 == 0:
+#             annual_salary += annual_salary * semi_annual_raise
 
-    if current_savings > down_payment:
-        high = guess
-    else:
-        low = guess
+#     if current_savings > down_payment:
+#         high = guess
+#     else:
+#         low = guess
 
-    guess = (high + low) / 2
-    num_of_searches += 1
+#     guess = (high + low) / 2
+#     num_of_searches += 1
 
-if portion_saved > 1:
-    print("It is not possible to pay the down payment in three years.")
-else:
-    print("Best savings rate:", portion_saved)
-    print("Steps in bisection search:", num_of_searches)
+# if portion_saved > 1:
+#     print("It is not possible to pay the down payment in three years.")
+# else:
+#     print("Best savings rate:", portion_saved)
+#     print("Steps in bisection search:", num_of_searches)
